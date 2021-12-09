@@ -23,8 +23,6 @@ body {font-size:16px;}
     
       <a href="#Introductions" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Introductions</a> 
     
-      <a href="#Compile" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Compile</a> 
-    
       <a href="#Instructions" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Instructions</a> 
     
       <a href="#Variable & Loop" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Variable & Loop</a> 
@@ -34,6 +32,8 @@ body {font-size:16px;}
       <a href="#Deploy" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Deploy</a> 
     
       <a href="#Capability" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Capability</a> 
+    
+      <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"></a> 
       </div>
 </nav>
 
@@ -65,25 +65,12 @@ This tool is written in C language and can be used for any file, but customized 
   </div>
 
   
-    <!-- Compile -->
-    <div class="w3-container" id="Compile" style="margin-top:75px">
-      <h1 class="w3-xxlarge w3-text-red"><b>Compile.</b></h1>
-      <hr style="width:50px;border:3px solid red" class="w3-round">
-      <p>This tool is written in C language and uses <a href="https://gcc.gnu.org/">GCC</a> and <a href="https://www.gnu.org/software/make/">Make</a>
-for compilation.</p>
-<p>Compiled binary files for Windows and Ubuntu available in <a href="https://github.com/liyanboy74/htmixer/releases/latest">release</a> section.</p>
-Compile <a href="https://github.com/liyanboy74/htmixer/blob/main/htmixer.c">HTMixer.c</a> :
-<div class="w3-border w3-black"><cc style="color: green;">> </cc>make</div>
-<p>After compile source, executable binary files will be generated in build folder, do not remove that!</p>
-
-    </div>
-  
     <!-- Instructions -->
     <div class="w3-container" id="Instructions" style="margin-top:75px">
       <h1 class="w3-xxlarge w3-text-red"><b>Instructions.</b></h1>
       <hr style="width:50px;border:3px solid red" class="w3-round">
       <p>
-Use <b>./build/htmixer</b> for mix <b>Doc</b> and <b>Var</b> files.</p>
+Use <b>htmixer</b> for mix <b>Doc</b> and <b>Var</b> files.</p>
 Usage :
 <div class="w3-border">htmixer <b>OUTPUT_FILE</b> -v <b>VAR</b> -d <b>DOC</b></div>
 <br>
@@ -100,12 +87,12 @@ Example :
       <p>Variable defined in <b>var</b> folder,but Loops defined in <b>doc</b> folder close to HTML files.</p>
 <h2>Variable:</h2>
 <p>Variables that are set in the <b>var</b> folder are replaced in the <b>doc</b> folder.</p>
-Example set variable <a href="https://github.com/liyanboy74/htmixer/blob/main/var/home.txt">home.txt</a> :
+Example set variable <a href="https://github.com/liyanboy74/htmixer/blob/main/example/var/home.txt">home.txt</a> :
 <div class="w3-border">
 &lcub;&lcub;PAGE-TITLE&nbsp;&nbsp; HTMixer&rcub;&rcub;
 </div>
 <br>
-Example use variable <a href="https://github.com/liyanboy74/htmixer/blob/main/doc/home.html">home.html</a> :
+Example use variable <a href="https://github.com/liyanboy74/htmixer/blob/main/example/doc/home.html">home.html</a> :
 <div class="w3-border">
 &lcub;&lcub;PAGE-TITLE&rcub;&rcub;
 </div>
@@ -115,7 +102,7 @@ Example use variable <a href="https://github.com/liyanboy74/htmixer/blob/main/do
 <p>Loops set in <b>doc</b> To repeat its internal code.<br>
 If the internal code use Variable, the Variable rename by loop counter.<br>
 For example [ VAR -> VAR-0 , VAR-1 , VAR-2 , ... , VAR-N ].</p>
-Example <a href="https://github.com/liyanboy74/htmixer/blob/main/doc/home.html">home.html</a> :
+Example <a href="https://github.com/liyanboy74/htmixer/blob/main/example/doc/home.html">home.html</a> :
 <div class="w3-border">
 {{FOR(0,5)<br>
  5 Times from 0 to 4<br>
@@ -135,10 +122,10 @@ Example <a href="https://github.com/liyanboy74/htmixer/blob/main/doc/home.html">
       <h1 class="w3-xxlarge w3-text-red"><b>Generate.</b></h1>
       <hr style="width:50px;border:3px solid red" class="w3-round">
       <p>Generator use <a href="https://www.gnu.org/software/make/">Make</a> for running commands in the 
-<a href="https://github.com/liyanboy74/htmixer/blob/main/Makefile">Makefile</a>.
+<a href="https://github.com/liyanboy74/htmixer/blob/main/example/Makefile">Makefile</a>.
 </p>
 Generate :
-<div class="w3-border w3-black"><cc style="color: green;">> </cc>make generate</div>
+<div class="w3-border w3-black"><cc style="color: green;">> </cc>make</div>
 <p>In default the generated file stored in <b>gh-pages</b> folder, in head of Makefile you can changes the output folder.</p>
 
     </div>
@@ -150,7 +137,7 @@ Generate :
       <p>Deployment use <a href="https://pypi.org/project/ghp-import/">ghp-import</a> for <a href="https://pages.github.com/">Github Pages</a>.</p>
 Deployment :
 <div class="w3-border w3-black"><cc style="color: green;">> </cc>make deploy</div>
-<p>You can add <b>CNAME</b> by editing <b>Deploy</b> command in <a href="https://github.com/liyanboy74/htmixer/blob/main/Makefile">Makefile</a>.</p>
+<p>You can add <b>CNAME</b> by editing <b>Deploy</b> command in <a href="https://github.com/liyanboy74/htmixer/blob/main/example/Makefile">Makefile</a>.</p>
 
     </div>
   
